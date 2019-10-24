@@ -1,0 +1,19 @@
+
+
+
+[
+    {
+        "id": 1,
+        "name": "Jose Altuve",
+        "num": 27,
+        "position": "2B",
+        "GP": 124, 
+        "AB": 500,
+        "R": 89, 
+        "H": 149, 
+        "HR": 31,
+        "RBI": 74, 
+        "AVG": ".298",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/3/30/Jos%C3%A9_Altuve_2017.jpg"
+    }
+]
