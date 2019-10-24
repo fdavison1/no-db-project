@@ -2,7 +2,9 @@ import React from 'react'
 
 export default function Header() {
     return(
-        <header>Header.jsx</header>
+        <header>Header.jsx
+            <hr/>
+        </header>
     )
 }
 
