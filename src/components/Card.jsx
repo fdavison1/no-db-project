@@ -37,7 +37,8 @@ export default class Card extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='card-margin'>
+               
                 {/* <Link to={`/front/${this.props.cardObj2.id}`}> */}
                 <div 
                     className="card"
@@ -49,22 +50,25 @@ export default class Card extends React.Component {
                     <img src={this.props.cardObj2.image} alt={this.props.cardObj2.name} /> 
                     : null}
 
-                    <h1>{this.props.cardObj2.name} {this.props.cardObj2.num} | {this.props.cardObj2.position}</h1> 
+                    <h2>{this.props.cardObj2.name} {this.props.cardObj2.num} | {this.props.cardObj2.position}</h2> 
                     
                     {this.state.flipCard? 
-                    <div className="back">
-                        <h2 className='gray'>Games Played: </h2>
-                        <h2>At Bats: </h2>
-                        <h2 className='gray'>Runs: </h2>
-                        <h2>Hits: </h2>
-                        <h2 className='gray'>Home Runs: </h2>
-                        <h2>RBIs: </h2>
-                        <h2 className='gray'>ABG: </h2>
-                    </div> 
-                    : null}
-
+                     
+                        <div className="back">
+                            <h2 className='gray'>Games Played: {this.props.cardObj2.GP}</h2>
+                            <h2>At Bats: {this.props.cardObj2.AB}</h2>
+                            <h2 className='gray'>Runs: {this.props.cardObj2.R}</h2>
+                            <h2>Hits: {this.props.cardObj2.H}</h2>
+                            <h2 className='gray'>Home Runs: {this.props.cardObj2.HR}</h2>
+                            <h2>RBIs: {this.props.cardObj2.RBI}</h2>
+                            <h2 className='gray'>AVG: {this.props.cardObj2.AVG}</h2>
+                        </div> 
+                       
+                        : null}
+                    
                 </div>
-                {/* </Link> */}
+               
+                    <button>EDIT</button><button>X</button>
 
             </div>
         )

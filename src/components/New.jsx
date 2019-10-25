@@ -12,7 +12,12 @@ export default class New extends React.Component{
         return(
             <div>New.jsx
                 <br/>
-                <Link to='/'><button>Back</button></Link>
+              <div className="new">
+                  <button>SAVE</button>
+                  <button
+                  onClick={() => this.props.toggleEditFn()}
+                  >DISCARD</button>
+              </div>
                 </div>
         )
     }

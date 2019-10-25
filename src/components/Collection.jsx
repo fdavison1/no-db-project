@@ -8,9 +8,9 @@ export default class Collection extends React.Component {
         super(props)
 
     }
-    toggleCard() {
+    // toggleCard() {
 
-    }
+    // }
 
 
     render() {
@@ -19,7 +19,8 @@ export default class Collection extends React.Component {
             <div>Collection.jsx
                 <br />
                 <button onClick={() => this.props.getCardsFn()}>Get Cards</button>
-                <Link to='/new'><button>Make New</button></Link>
+                <button>Make New</button>
+                <h1>You have ___ cards.</h1>
                 <div className="cards">
 
                     {this.props.cardObj.map(el => (
