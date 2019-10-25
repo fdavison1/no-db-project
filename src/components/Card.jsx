@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { tsExternalModuleReference } from '@babel/types'
+import Edit2 from './Edit2'
 
 export default class Card extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             flipCard: false,
-             
+             editField: false,
         }
     }
 
@@ -22,13 +22,23 @@ export default class Card extends React.Component {
     //     this.props.toggleEditFn2()
     //     console.log(id)
     // }
+
+    editCard2(id){
+        this.setState({
+            editField: !this.state.editField
+        })
+    }
    
 
     render() {
         return (
             <div className='card-margin'>
+               {this.state.editField ? 
+               <Edit2 
+                cardObj = {this.props.cardObj2}
+               /> 
+               : null}
                
-                {/* <Link to={`/front/${this.props.cardObj2.id}`}> */}
                 <div 
                     className="card"
                     // onClick={()=>console.log('test', this.props.cardObj2.name)}
@@ -57,7 +67,12 @@ export default class Card extends React.Component {
                     
                 </div>
                
-                    <button onClick={()=>this.props.editCardFn(this.props.cardObj2.id)}>EDIT</button>
+               
+                    {/* <button onClick={()=>this.props.editCardFn(this.props.cardObj2.id)}>EDIT</button> */}
+                    
+                       
+
+                    <button onClick={()=>this.editCard2(this.props.cardObj2.id)}>EDIT</button>
 
                     <button onClick={()=>this.props.deleteCardFn(`${this.props.cardObj2.id}`)}>X</button>
 

@@ -26,28 +26,11 @@ module.exports = {
             res.status(200).send(cardArr)
         },
         editCard: (req, res) => {
-            // const {id} = req.params
+            
             const index = cardArr.findIndex(el => el.id === +id)
            cardArr.splice(index, 1, req.body)
-            // cardArr[index].num = num
-            // position: 'Mascot',
-            // cardArr[index].name = name
-            // GP: 0,
-            // cardArr[index].name = name
-            // AB: 0,
-            // cardArr[index].name = name
-            // R: 0,
-            // cardArr[index].name = name
-            // H: 0,
-            // cardArr[index].name = name
-            // HR: 0,
-            // cardArr[index].name = name
-            // RBI: 0,
-            // cardArr[index].name = name
-            // AVG: '.000',
-            // cardArr[index].name = name
-            // image: 
-            // cardArr[index].name = name
+            
+           
             res.status(200).send(cardArr)
         }
     }

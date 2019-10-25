@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './Card'
 import './Collection.css'
+import Edit2 from './Edit2'
 import { Link } from 'react-router-dom'
 
 export default class Collection extends React.Component {
@@ -18,7 +19,8 @@ export default class Collection extends React.Component {
         // console.log(this.props.cardObj)
         return (
             <div>
-                
+            
+
                
                 {/* MAKE NEW BUTTON */}
                 {!this.props.editing ?
