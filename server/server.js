@@ -11,6 +11,7 @@ app.use(express.json())
 app.get('/api/collection', ctrl.getCards)
 // app.get('/api/collection/:id', ctrl.getCard)
 app.post('/api/collection', ctrl.newCard)
+app.delete('/api/collection/:id', ctrl.deleteCard)
 
 
 //listening

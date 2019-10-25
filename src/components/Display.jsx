@@ -19,6 +19,7 @@ export default class Display extends React.Component {
         this.getCards = this.getCards.bind(this)
         this.toggleEditField = this.toggleEditField.bind(this)
         this.toggleEditField2 = this.toggleEditField2.bind(this)
+        this.deleteCard = this.deleteCard.bind(this)
     }
 
     // componentDidMount(){
@@ -31,9 +32,19 @@ export default class Display extends React.Component {
             .then(res => {
                 this.setState({
                     cards: res.data,
-                    card: '',
+                    // card: '',
                 })
             })
+    }
+
+    deleteCard(id){
+        axios
+        .delete(`/api/collection/${id}`)
+        .then(res => {
+            this.setState({
+                cards: res.data
+            })
+        })
     }
 
     toggleEditField() {
@@ -60,6 +71,7 @@ export default class Display extends React.Component {
                     <New
                         toggleEditFn={this.toggleEditField}
                         getCardsFn={this.getCards}
+                        
                     />
                     : null}
 
@@ -76,6 +88,7 @@ export default class Display extends React.Component {
                     toggleEditFn={this.toggleEditField}
                     toggleEditFn2={this.toggleEditField2}
                     editing={this.state.editing}
+                    deleteCardFn = {this.deleteCard}
                 />
 
 

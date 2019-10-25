@@ -9,7 +9,7 @@ export default class Collection extends React.Component {
         this.state ={
 
         }
-        
+
     }
     // toggleCard() {
 
@@ -40,6 +40,7 @@ export default class Collection extends React.Component {
                             cardInfo={this.props.card}
                             getCardFn={this.props.getCardFn}
                             toggleEditFn2 = {this.props.toggleEditFn2}
+                            deleteCardFn = {this.props.deleteCardFn}
                         />
 
 

@@ -70,7 +70,7 @@ export default class Card extends React.Component {
                
                     <button onClick={()=>this.props.toggleEditFn2()}>EDIT</button>
 
-                    <button>X</button>
+                    <button onClick={()=>this.props.deleteCardFn(`${this.props.cardObj2.id}`)}>X</button>
 
             </div>
         )
