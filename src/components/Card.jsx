@@ -68,7 +68,9 @@ export default class Card extends React.Component {
                     
                 </div>
                
-                    <button>EDIT</button><button>X</button>
+                    <button onClick={()=>this.props.toggleEditFn2()}>EDIT</button>
+
+                    <button>X</button>
 
             </div>
         )

@@ -60,3 +60,11 @@ button {
     display: flex;
     justify-content: center;
 }
+
+.edit {
+    background: cyan;
+    height: 850px;
+    display: flex;
+    justify-content: center;
+}
+

@@ -4,8 +4,7 @@ import axios from 'axios'
 import Collection from './Collection'
 import { Switch, Route } from 'react-router-dom'
 import New from './New'
-import Back from './Back'
-import Front from './Front'
+import Edit from './Edit'
 
 
 
@@ -14,15 +13,17 @@ export default class Display extends React.Component {
         super()
         this.state = {
             cards: [],
-            editing: false
+            editing: false,
+            editing2: false
         }
         this.getCards = this.getCards.bind(this)
         this.toggleEditField = this.toggleEditField.bind(this)
+        this.toggleEditField2 = this.toggleEditField2.bind(this)
     }
 
-    componentDidMount(){
-        console.log(this.state.editing)
-    }
+    // componentDidMount(){
+    //     console.log(this.state.editing)
+    // }
 
     getCards() {
         axios
@@ -30,15 +31,22 @@ export default class Display extends React.Component {
             .then(res => {
                 this.setState({
                     cards: res.data,
-                    card: ''
+                    card: '',
                 })
             })
     }
 
     toggleEditField() {
-        console.log('fred')
+        // console.log('fred')
         this.setState({
-            editing: !this.editing
+            editing: !this.state.editing
+        })
+    }
+
+    toggleEditField2() {
+        // console.log('fred')
+        this.setState({
+            editing2: !this.state.editing2
         })
     }
 
@@ -49,18 +57,25 @@ export default class Display extends React.Component {
                 <br />
 
 
-                {this.state.editing ? 
-                <New 
-                    toggleEditFn = {this.toggleEditField}
-                /> 
-                : null}
+                {this.state.editing ?
+                    <New
+                        toggleEditFn={this.toggleEditField}
+                    />
+                    : null}
 
-
+                {this.state.editing2 ?
+                    <Edit
+                        toggleEditFn2={this.toggleEditField2}
+                    />
+                    : null}
 
                 <Collection
                     cardObj={this.state.cards}
                     getCardsFn={this.getCards}
-                    getCardFn={this.getCard}
+                    // getCardFn={this.getCard}
+                    toggleEditFn={this.toggleEditField}
+                    toggleEditFn2={this.toggleEditField2}
+                    editing={this.state.editing}
                 />
 
 
