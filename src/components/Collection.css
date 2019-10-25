@@ -24,3 +24,15 @@ img {
     object-fit: cover;
 }
 
+.back {
+    border: solid black;
+    width: 300px;
+}
+
+.gray {
+    background: lightgray;
+}
+
+h2 {
+    margin: 0;
+}

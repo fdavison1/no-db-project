@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { tsExternalModuleReference } from '@babel/types'
 
 export default class Card extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            // key1: ''
+            flipCard: false
         }
         // this.cardObj2 = this.cardObj2.bind(this)
     }
@@ -28,7 +29,9 @@ export default class Card extends React.Component {
     //     console.log(this.state.key1)
     // }
     toggleCard(){
-        
+        this.setState({
+            flipCard: !this.state.flipCard
+        })
     }
    
 
@@ -38,11 +41,28 @@ export default class Card extends React.Component {
                 {/* <Link to={`/front/${this.props.cardObj2.id}`}> */}
                 <div 
                     className="card"
-                    onClick={()=>console.log('test', this.props.cardObj2.name)}
-                // onClick={()=>this.handleClick()}
+                    // onClick={()=>console.log('test', this.props.cardObj2.name)}
+                    onClick={()=>this.toggleCard()}
                 >
-                    <img src={this.props.cardObj2.image} alt={this.props.cardObj2.name} />
-                    <h1>{this.props.cardObj2.name}</h1>
+                    
+                    {!this.state.flipCard ?
+                    <img src={this.props.cardObj2.image} alt={this.props.cardObj2.name} /> 
+                    : null}
+
+                    <h1>{this.props.cardObj2.name} {this.props.cardObj2.num} | {this.props.cardObj2.position}</h1> 
+                    
+                    {this.state.flipCard? 
+                    <div className="back">
+                        <h2 className='gray'>Games Played: </h2>
+                        <h2>At Bats: </h2>
+                        <h2 className='gray'>Runs: </h2>
+                        <h2>Hits: </h2>
+                        <h2 className='gray'>Home Runs: </h2>
+                        <h2>RBIs: </h2>
+                        <h2 className='gray'>ABG: </h2>
+                    </div> 
+                    : null}
+
                 </div>
                 {/* </Link> */}
 
