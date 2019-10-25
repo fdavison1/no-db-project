@@ -1,6 +1,4 @@
 import React from 'react'
-import Front from './Front'
-import Back from './Back'
 import './Collection.css'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
@@ -33,16 +31,18 @@ export default class Collection extends React.Component {
                 <div className="cards">
 
                 {this.state.cards.map(el => (
+                    
+                    <Link to={`/front/${el.id}`}>
                     <div className="card">
                         <img src={el.image} alt={el.name}/>
                         <h1>{el.name}</h1>
                     </div>
+                    </Link>
+
                 ))}
 
                 </div>
                 
-                <Front />
-                <Back />
             </div>
         )
     }
