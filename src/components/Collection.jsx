@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from './Card'
 import './Collection.css'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
@@ -15,7 +16,6 @@ export default class Collection extends React.Component {
         axios
             .get('/api/collection')
             .then(res => {
-                console.log(res.data)
                 this.setState({
                     cards: res.data
                 })
@@ -26,23 +26,21 @@ export default class Collection extends React.Component {
         return (
             <div>Collection.jsx
                 <br />
-                <button onClick={()=> this.getCards()}>Get Cards</button>
+                <button onClick={() => this.getCards()}>Get Cards</button>
                 <Link to='/new'><button>Make New</button></Link>
                 <div className="cards">
 
-                {this.state.cards.map(el => (
-                    
-                    <Link to={`/front/${el.id}`}>
-                    <div className="card">
-                        <img src={el.image} alt={el.name}/>
-                        <h1>{el.name}</h1>
-                    </div>
-                    </Link>
+                    {this.state.cards.map(el => (                       
 
-                ))}
+                        <Card 
+                        cardObj = {el}
+                        key={el.id}
+                        />
+
+                    ))}
 
                 </div>
-                
+
             </div>
         )
     }
