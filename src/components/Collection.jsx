@@ -6,10 +6,12 @@ import { Link } from 'react-router-dom'
 export default class Collection extends React.Component {
     constructor(props) {
         super(props)
-       
+
+    }
+    toggleCard() {
+
     }
 
-   
 
     render() {
         // console.log(this.props.cardObj)
@@ -20,18 +22,18 @@ export default class Collection extends React.Component {
                 <Link to='/new'><button>Make New</button></Link>
                 <div className="cards">
 
-                    {this.props.cardObj.map(el => (                       
-                        
-                        
-                   
-                        <Card
-                        cardObj2 = {el}
-                        key={el.id}
-                        cardInfo = {this.props.card}
-                        getCardFn = {this.props.getCardFn}
+                    {this.props.cardObj.map(el => (
+
+
+
+                        <Card 
+                            cardObj2={el}
+                            key={el.id}
+                            cardInfo={this.props.card}
+                            getCardFn={this.props.getCardFn}
                         />
-                    
-                      
+
+
 
                     ))}
 

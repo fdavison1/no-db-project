@@ -3,6 +3,7 @@ import axios from 'axios'
 // import routes from '../routes'
 import Collection from './Collection'
 import {Switch, Route} from 'react-router-dom'
+import New from './New'
 import Back from './Back'
 import Front from './Front'
 
@@ -51,7 +52,7 @@ export default class Display extends React.Component {
                 /> */}
 
                 <Switch>
-                    <Route path='/back' component={()=> (
+                    {/* <Route path='/back' component={()=> (
                         <Back 
                         cardObj = {this.state.cards}
                         />
@@ -61,14 +62,15 @@ export default class Display extends React.Component {
                         cardObj = {this.state.cards}
                         
                         />
-                    )}/>
-                    <Route path='/collection' component={()=> (
+                    )}/> */}
+                    <Route exact path='/' component={()=> (
                         <Collection 
                         cardObj = {this.state.cards}
                         getCardsFn = {this.getCards}
                         getCardFn = {this.getCard}
                         />
                     )}/>
+                    <Route path='/new' component={New} />
                 </Switch>
 
             </div>
