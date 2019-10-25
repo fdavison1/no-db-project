@@ -1,8 +1,11 @@
 import React from 'react'
 import axios from 'axios'
-import {Link} from 'react-router-dom'
-import routes from '../routes'
+// import routes from '../routes'
 import Collection from './Collection'
+import {Switch, Route} from 'react-router-dom'
+import Back from './Back'
+import Front from './Front'
+
 
 
 export default class Display extends React.Component {
@@ -11,7 +14,8 @@ export default class Display extends React.Component {
         this.state = {
             cards: []
         }
-       
+       this.getCards = this.getCards.bind(this)
+    //    this.getCard = this.getCard.bind(this)
     }
 
     getCards() {
@@ -19,21 +23,54 @@ export default class Display extends React.Component {
             .get('/api/collection')
             .then(res => {
                 this.setState({
-                    cards: res.data
+                    cards: res.data,
+                    card: ''
                 })
             })
     }
+
+    // getCard(id){
+    //     axios
+    //     .get(`/api/collection/${id}`)
+    //     // console.log(id)
+    //     .then(res => {
+    //         this.setState({
+    //             card: res.data
+    //         })
+    //     })
+    // }
 
     render() {
         return (
             <div>
                 DISPLAY.JSX
                 <br />
-                <Collection 
+                {/* <Collection 
                 cardObj = {this.state.cards}
                 getCardsFn = {()=>this.getCards()}
-                />
-                {routes}
+                /> */}
+
+                <Switch>
+                    <Route path='/back' component={()=> (
+                        <Back 
+                        cardObj = {this.state.cards}
+                        />
+                    )}/>
+                    <Route path='/front' component={()=> (
+                        <Front 
+                        cardObj = {this.state.cards}
+                        
+                        />
+                    )}/>
+                    <Route path='/collection' component={()=> (
+                        <Collection 
+                        cardObj = {this.state.cards}
+                        getCardsFn = {this.getCards}
+                        getCardFn = {this.getCard}
+                        />
+                    )}/>
+                </Switch>
+
             </div>
         )
     }

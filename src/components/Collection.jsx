@@ -4,14 +4,15 @@ import './Collection.css'
 import { Link } from 'react-router-dom'
 
 export default class Collection extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
        
     }
 
     
 
     render() {
+        // console.log(this.props.cardObj)
         return (
             <div>Collection.jsx
                 <br />
@@ -21,10 +22,16 @@ export default class Collection extends React.Component {
 
                     {this.props.cardObj.map(el => (                       
                         
+                        
+                   
                         <Card 
-                        cardObj = {el}
+                        cardObj2 = {el}
                         key={el.id}
+                        cardInfo = {this.props.card}
+                        getCardFn = {this.props.getCardFn}
                         />
+                    
+                      
 
                     ))}
 

@@ -8,7 +8,7 @@ import Display from './components/Display'
 
 export default (
     <Switch>
-        {/* <Route exact path='/' component={Display} /> */}
+        <Route exact path='/' component={Display} />
         <Route path='/new' component={New} />
         <Route path='/front' component={Front} />
         <Route path='/back' component={Back} />

@@ -12,7 +12,16 @@ export default class Back extends React.Component{
         return(
             <div>Back.jsx
                 <br/>
-                <Link to='/'><button>Back to Collection</button></Link>
+                <Link to='/collection'><button>Back to Collection</button></Link>
+               
+               <Link to='/front'>
+
+                <div className="card">
+                    {this.props.cardObj}
+                </div>
+               </Link>
+
+
             </div>
 
         )
