@@ -20,7 +20,7 @@ export default class Display extends React.Component {
         this.toggleEditField = this.toggleEditField.bind(this)
         this.toggleEditField2 = this.toggleEditField2.bind(this)
         this.deleteCard = this.deleteCard.bind(this)
-        this.editCard = this.editCard.bind(this)
+        // this.editCard = this.editCard.bind(this)
        
     }
 
@@ -53,12 +53,12 @@ componentDidMount(){
         })
     }
 
-    editCard(id){
-        this.toggleEditField2()
-        // console.log(id)
-        let cardID = id
-        console.log(cardID)
-    }
+    // editCard(id){
+    //     this.toggleEditField2()
+    //     // console.log(id)
+    //     let cardID = id
+    //     console.log(cardID)
+    // }
 
    
 

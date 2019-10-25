@@ -9,6 +9,7 @@ export default class Card extends React.Component {
             flipCard: false,
              editField: false,
         }
+        this.editCard2 = this.editCard2.bind(this)
     }
 
     toggleCard(){
@@ -23,7 +24,7 @@ export default class Card extends React.Component {
     //     console.log(id)
     // }
 
-    editCard2(id){
+    editCard2(){
         this.setState({
             editField: !this.state.editField
         })
@@ -36,6 +37,7 @@ export default class Card extends React.Component {
                {this.state.editField ? 
                <Edit2 
                 cardObj = {this.props.cardObj2}
+                editCard2 = {this.editCard2}
                /> 
                : null}
                

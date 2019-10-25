@@ -21,19 +21,24 @@ export default class Edit2 extends React.Component{
     componentDidMount(){
         this.setState({
             name: this.props.cardObj.name,
-            name: '',
-            num: '00',
-            position: 'Mascot',
-            GP: 0,
-            AB: 0,
-            R: 0,
-            H: 0,
-            HR: 0,
-            RBI: 0,
-            AVG: '.000',
+            num: this.props.cardObj.num,
+            position: this.props.cardObj.position,
+            GP: this.props.cardObj.GP,
+            AB: this.props.cardObj.AB,
+            R: this.props.cardObj.R,
+            H: this.props.cardObj.H,
+            HR: this.props.cardObj.HR,
+            RBI: this.props.cardObj.RBI,
+            AVG: this.props.cardObj.AVG,
             image: this.props.cardObj.image
         })
     }
+
+    // editCard2(id){
+    //     this.setState({
+    //         editField: !this.state.editField
+    //     })
+    // }
 
     render(){
         return(
@@ -78,7 +83,7 @@ export default class Edit2 extends React.Component{
 
 <div className="new-preview">
 <button
-    onClick={() => this.props.toggleEditFn2()}
+    onClick={() => this.props.editCard2()}
 >DISCARD</button>
 
 <div className="card">
@@ -87,7 +92,7 @@ export default class Edit2 extends React.Component{
 </div>
 
 <button
-    onClick={() => this.editCard(this.state)}>UPLOAD CARD</button>
+    onClick={() => this.props.editCard2(this.state)}>UPLOAD CARD</button>
 
 
 </div>
