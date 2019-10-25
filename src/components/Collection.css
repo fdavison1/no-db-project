@@ -56,21 +56,25 @@ button {
 
 .new {
     background: yellow;
-    height: 850px;
-    /* display: flex; */
-    /* justify-content: center; */
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .edit {
     background: cyan;
-    height: 850px;
+    height: 750px;
     display: flex;
     justify-content: center;
 }
 
 .inputs {
-    /* display: flex; */
-    /* border: solid red; */
+
+}
+
+.new-preview {
+    padding: 100px;;
 }
 
 input {
