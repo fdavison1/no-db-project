@@ -57,8 +57,8 @@ button {
 .new {
     background: yellow;
     height: 850px;
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
+    /* justify-content: center; */
 }
 
 .edit {
@@ -66,5 +66,15 @@ button {
     height: 850px;
     display: flex;
     justify-content: center;
+}
+
+.inputs {
+    /* display: flex; */
+    /* border: solid red; */
+}
+
+input {
+    height: 1.8rem;
+    font-size: 1.2rem;
 }
 

@@ -53,11 +53,10 @@ export default class Display extends React.Component {
     render() {
         return (
             <div>
-                DISPLAY.JSX
-                <br />
+               
 
 
-                {this.state.editing ?
+                {!this.state.editing ?
                     <New
                         toggleEditFn={this.toggleEditField}
                     />
