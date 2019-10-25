@@ -9,7 +9,8 @@ app.use(express.json())
 
 //endpoints
 app.get('/api/collection', ctrl.getCards)
-app.get('/api/collection/:id', ctrl.getCard)
+// app.get('/api/collection/:id', ctrl.getCard)
+app.post('/api/collection', ctrl.newCard)
 
 
 //listening

@@ -1,5 +1,5 @@
 const cardArr = require('./cards.json')
-
+let id = 10
 
 module.exports = {
     getCards: (req, res) => {
@@ -12,5 +12,11 @@ module.exports = {
         let card = cardArr[index]
         // console.log(card)
         res.status(200).send(card)
+        },
+        newCard: (req, res) => {
+            const newCard = {...req.body, id}
+            cardArr.push(newCard)
+            id++
+            res.status(200).send(cardArr)
         }
     }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 export default class New extends React.Component {
     constructor() {
@@ -7,7 +8,7 @@ export default class New extends React.Component {
         this.state = {
             name: 'Orbit',
             num: '00',
-            pos: 'Mascot',
+            position: 'Mascot',
             GP: 0,
             AB: 0,
             R: 0,
@@ -15,11 +16,31 @@ export default class New extends React.Component {
             HR: 0,
             RBI: 0,
             AVG: '.000',
-            imageURL: 'https://d13csqd2kn0ewr.cloudfront.net/uploads/image/file/64371/w640xh480_USPW_779964.jpg?ts=1407631359',
-            
-
+            image: 'https://d13csqd2kn0ewr.cloudfront.net/uploads/image/file/64371/w640xh480_USPW_779964.jpg?ts=1407631359'
         }
     }
+
+    newCard() {
+        axios
+            .post('/api/collection', this.state)
+            .then(res =>
+                this.setState({
+                    name: 'Orbit',
+                    num: +this.state.num +1,
+                    position: 'Mascot',
+                    GP: 0,
+                    AB: 0,
+                    R: 0,
+                    H: 0,
+                    HR: 0,
+                    RBI: 0,
+                    AVG: '.000',
+                    image: 'https://d13csqd2kn0ewr.cloudfront.net/uploads/image/file/64371/w640xh480_USPW_779964.jpg?ts=1407631359'
+                }))
+                this.props.toggleEditFn()
+                this.props.getCardsFn()
+    }
+
     handleChange1(e) {
         this.setState({
             name: e.target.value
@@ -120,25 +141,26 @@ export default class New extends React.Component {
                     >DISCARD</button>
 
                     <div className="card">
-                        <img src={this.state.imageURL} alt={this.state.name}/>
-                        <h2>{this.state.name} {this.state.num}|{this.state.pos}</h2>
+                        <img src={this.state.image} alt={this.state.name} />
+                        <h2>{this.state.name} {this.state.num}|{this.state.position}</h2>
                     </div>
 
-                    <button>UPLOAD CARD</button>
+                    <button
+                        onClick={() => this.newCard()}>UPLOAD CARD</button>
 
                 </div>
 
                 <div className="card">
-                    <h2>{this.state.name} {this.state.num}|{this.state.pos}</h2>
-                <div className="back">
-                            <h2 className='gray'>Games Played: {this.state.GP}</h2>
-                            <h2>At Bats: {this.state.AB}</h2>
-                            <h2 className='gray'>Runs: {this.state.R}</h2>
-                            <h2>Hits: {this.state.H}</h2>
-                            <h2 className='gray'>Home Runs: {this.state.HR}</h2>
-                            <h2>RBIs: {this.state.RBI}</h2>
-                            <h2 className='gray'>AVG: {this.state.AVG}</h2>
-                        </div> 
+                    <h2>{this.state.name} {this.state.num}|{this.state.position}</h2>
+                    <div className="back">
+                        <h2 className='gray'>Games Played: {this.state.GP}</h2>
+                        <h2>At Bats: {this.state.AB}</h2>
+                        <h2 className='gray'>Runs: {this.state.R}</h2>
+                        <h2>Hits: {this.state.H}</h2>
+                        <h2 className='gray'>Home Runs: {this.state.HR}</h2>
+                        <h2>RBIs: {this.state.RBI}</h2>
+                        <h2 className='gray'>AVG: {this.state.AVG}</h2>
+                    </div>
                 </div>
 
             </div>

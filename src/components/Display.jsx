@@ -55,10 +55,11 @@ export default class Display extends React.Component {
             <div>
                
 
-
-                {!this.state.editing ?
+{/* here is the bang you need to delete */}
+                {this.state.editing ?
                     <New
                         toggleEditFn={this.toggleEditField}
+                        getCardsFn={this.getCards}
                     />
                     : null}
 
