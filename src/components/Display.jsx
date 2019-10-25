@@ -20,11 +20,17 @@ export default class Display extends React.Component {
         this.toggleEditField = this.toggleEditField.bind(this)
         this.toggleEditField2 = this.toggleEditField2.bind(this)
         this.deleteCard = this.deleteCard.bind(this)
+        this.editCard = this.editCard.bind(this)
+       
     }
 
     // componentDidMount(){
     //     console.log(this.state.editing)
     // }
+
+componentDidMount(){
+    this.getCards()
+}
 
     getCards() {
         axios
@@ -47,6 +53,15 @@ export default class Display extends React.Component {
         })
     }
 
+    editCard(id){
+        this.toggleEditField2()
+        // console.log(id)
+        let cardID = id
+        console.log(cardID)
+    }
+
+   
+
     toggleEditField() {
         // console.log('fred')
         this.setState({
@@ -66,18 +81,20 @@ export default class Display extends React.Component {
             <div>
                
 
-{/* here is the bang you need to delete */}
                 {this.state.editing ?
                     <New
-                        toggleEditFn={this.toggleEditField}
-                        getCardsFn={this.getCards}
-                        
+                    toggleEditFn={this.toggleEditField}
+                    getCardsFn={this.getCards}
+                    
                     />
                     : null}
 
+        {/* here is the bang you need to delete */}
                 {this.state.editing2 ?
                     <Edit
                         toggleEditFn2={this.toggleEditField2}
+                        cardObj={this.state.cards}
+                        getCardsFn={this.getCards}
                     />
                     : null}
 
@@ -89,6 +106,7 @@ export default class Display extends React.Component {
                     toggleEditFn2={this.toggleEditField2}
                     editing={this.state.editing}
                     deleteCardFn = {this.deleteCard}
+                    editCardFn = {this.editCard}
                 />
 
 

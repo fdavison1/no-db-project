@@ -6,33 +6,22 @@ export default class Card extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            flipCard: false
+            flipCard: false,
+             
         }
-        // this.cardObj2 = this.cardObj2.bind(this)
     }
 
-    // filterCards(){
-    //     console.log(this.props.cardObj2)
-    //     let var1 = this.props.cardObj2.id 
-    //     console.log(this.props.cardObj2.id)
-    //     console.log(var1)
-    //     console.log(this.props.cardObj2['var1'])
-    //     // let var2 = this.props.cardObj2.filter(var1 === this.props.cardObj2.id)
-    //     // console.log(var2)
-    //         // this.setState({
-    //     // })
-    // handleClick(){
-    //     this.setState({
-    //         key1: this.props.cardObj2.id
-    //     })
-    //     this.props.cardObj2.filter((el,i) => i === this.props.cardObj2.id-1)
-    //     console.log(this.state.key1)
-    // }
     toggleCard(){
         this.setState({
-            flipCard: !this.state.flipCard
+            flipCard: !this.state.flipCard,
         })
+        console.log(this.props.cardObj2)
     }
+
+    // editCard(id){
+    //     this.props.toggleEditFn2()
+    //     console.log(id)
+    // }
    
 
     render() {
@@ -68,7 +57,7 @@ export default class Card extends React.Component {
                     
                 </div>
                
-                    <button onClick={()=>this.props.toggleEditFn2()}>EDIT</button>
+                    <button onClick={()=>this.props.editCardFn(this.props.cardObj2.id)}>EDIT</button>
 
                     <button onClick={()=>this.props.deleteCardFn(`${this.props.cardObj2.id}`)}>X</button>
 

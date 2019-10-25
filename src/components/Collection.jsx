@@ -11,24 +11,25 @@ export default class Collection extends React.Component {
         }
 
     }
-    // toggleCard() {
-
-    // }
+    
 
 
     render() {
         // console.log(this.props.cardObj)
         return (
-            <div>Collection.jsx
-                <br />
-                <button onClick={() => this.props.getCardsFn()}>Get Cards</button>
+            <div>
                 
+               
+                {/* MAKE NEW BUTTON */}
                 {!this.props.editing ?
                 <button onClick={() => this.props.toggleEditFn()}>Make New</button>
                 : null}
 
                 <h1>You have {this.props.cardObj.length} cards.</h1>
+            
+                {/* MAPPING */}
                 <div className="cards">
+
 
                     {this.props.cardObj.map(el => (
 
@@ -41,6 +42,7 @@ export default class Collection extends React.Component {
                             getCardFn={this.props.getCardFn}
                             toggleEditFn2 = {this.props.toggleEditFn2}
                             deleteCardFn = {this.props.deleteCardFn}
+                            editCardFn = {this.props.editCardFn}
                         />
 
 
