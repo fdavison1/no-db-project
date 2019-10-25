@@ -1,0 +1,25 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.card {
+    border: solid black thick;
+    height: 500px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    margin: 50px;
+}
+
+img {
+    height: 400px;
+    margin-top: 15px;
+    border: solid black;
+    max-width: 300px;
+    object-fit: cover;
+}
