@@ -9,7 +9,7 @@ export default class Collection extends React.Component {
        
     }
 
-    
+   
 
     render() {
         // console.log(this.props.cardObj)
@@ -24,7 +24,7 @@ export default class Collection extends React.Component {
                         
                         
                    
-                        <Card 
+                        <Card
                         cardObj2 = {el}
                         key={el.id}
                         cardInfo = {this.props.card}

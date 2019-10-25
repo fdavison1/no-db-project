@@ -20,7 +20,7 @@ export default class Front extends React.Component{
     getCard(){
     axios
         // .get(`/api/collection/${this.props.cardObj.id}`)
-        .get(`api/collection/${6}`)
+        .get(`api/collection/${5}`)
         .then(res => {
             this.setState({
                 name: res.data.name,
