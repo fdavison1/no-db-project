@@ -10,7 +10,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* {routes} */}
       <Display />
     </div>
   );
