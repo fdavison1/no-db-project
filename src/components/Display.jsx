@@ -1,8 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-// import routes from '../routes'
 import Collection from './Collection'
-import { Switch, Route } from 'react-router-dom'
 import New from './New'
 
 
@@ -79,7 +77,7 @@ componentDidMount(){
         return (
             <div>
                
-
+{/* /////////////////////////////////////////////////// */}
                 {this.state.editing ?
                     <New
                     toggleEditFn={this.toggleEditField}

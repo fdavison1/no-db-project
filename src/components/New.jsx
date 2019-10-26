@@ -54,42 +54,42 @@ export default class New extends React.Component {
     }
     handleChange3(e) {
         this.setState({
-            name: e.target.value
+            position: e.target.value
         })
     }
     handleChange4(e) {
         this.setState({
-            name: e.target.value
+            GP: e.target.value
         })
     }
     handleChange5(e) {
         this.setState({
-            name: e.target.value
+            AB: e.target.value
         })
     }
     handleChange6(e) {
         this.setState({
-            name: e.target.value
+            R: e.target.value
         })
     }
     handleChange7(e) {
         this.setState({
-            name: e.target.value
+            H: e.target.value
         })
     }
     handleChange8(e) {
         this.setState({
-            name: e.target.value
+            HR: e.target.value
         })
     }
     handleChange9(e) {
         this.setState({
-            name: e.target.value
+            RBI: e.target.value
         })
     }
     handleChange10(e) {
         this.setState({
-            name: e.target.value
+            AVG: e.target.value
         })
     }
 
@@ -126,24 +126,31 @@ export default class New extends React.Component {
                         type="text" /><button>GET RANDOM</button>
                     <h2>Games Played:</h2><input
                         onChange={(e) => this.handleChange4(e)}
+                        placeholder="Enter a number!"
                         type="text" /><button>GET RANDOM</button>
                     <h2>At Bats:</h2><input
                         onChange={(e) => this.handleChange5(e)}
+                        placeholder="Enter a number!"
                         type="text" /><button>GET RANDOM</button>
                     <h2>Runs:</h2><input
                         onChange={(e) => this.handleChange6(e)}
+                        placeholder="Enter a number!"
                         type="text" /><button>GET RANDOM</button>
                     <h2>Hits:</h2><input
                         onChange={(e) => this.handleChange7(e)}
+                        placeholder="Enter a number!"
                         type="text" /><button>GET RANDOM</button>
                     <h2>Home Runs:</h2><input
                         onChange={(e) => this.handleChange8(e)}
+                        placeholder="Enter a number!"
                         type="text" /><button>GET RANDOM</button>
                     <h2>RBIs:</h2><input
                         onChange={(e) => this.handleChange9(e)}
+                        placeholder="Enter a number!"
                         type="text" /><button>GET RANDOM</button>
                     <h2>AVG: </h2><input
                         onChange={(e) => this.handleChange10(e)}
+                        placeholder="Enter a percentage!"
                         type="text" /><button>GET RANDOM</button>
                     <br /><br /><input 
                         onChange={(e)=>this.handleChange11(e)}

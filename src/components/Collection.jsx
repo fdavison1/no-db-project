@@ -1,8 +1,7 @@
 import React from 'react'
 import Card from './Card'
 import './Collection.css'
-import Edit2 from './Edit2'
-import { Link } from 'react-router-dom'
+
 
 export default class Collection extends React.Component {
     constructor(props) {

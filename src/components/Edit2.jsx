@@ -48,42 +48,42 @@ export default class Edit2 extends React.Component {
     }
     handleChange3(e) {
         this.setState({
-            name: e.target.value
+            position: e.target.value
         })
     }
     handleChange4(e) {
         this.setState({
-            name: e.target.value
+            GP: e.target.value
         })
     }
     handleChange5(e) {
         this.setState({
-            name: e.target.value
+            AB: e.target.value
         })
     }
     handleChange6(e) {
         this.setState({
-            name: e.target.value
+            R: e.target.value
         })
     }
     handleChange7(e) {
         this.setState({
-            name: e.target.value
+            H: e.target.value
         })
     }
     handleChange8(e) {
         this.setState({
-            name: e.target.value
+            HR: e.target.value
         })
     }
     handleChange9(e) {
         this.setState({
-            name: e.target.value
+            RBI: e.target.value
         })
     }
     handleChange10(e) {
         this.setState({
-            name: e.target.value
+            AVG: e.target.value
         })
     }
 
@@ -102,8 +102,8 @@ export default class Edit2 extends React.Component {
     saveChanges(id, body) {
 
         
-        this.props.saveChangesFn(id, body)
         this.props.editCard2()
+        this.props.saveChangesFn(id, body)
     }
 
     render() {
