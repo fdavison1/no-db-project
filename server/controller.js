@@ -4,7 +4,6 @@ let id = 10
 module.exports = {
     getCards: (req, res) => {
         res.status(200).send(cardArr)
-        // console.log(cardArr)
     },
     // getCard: (req, res) => {
     //     const {id} = req.params
@@ -33,10 +32,4 @@ module.exports = {
         }
     }
 
-    // rename: (req, res) => {
-    //     const {id} = req.params
-    //     const {name} = req.body
-    //     const index = pokemonCaught.findIndex(el=> el.id=== +id)
-    //     pokemonCaught[index].name = name
-    //     res.status(200).send(pokemonCaught)
-    // },
+   

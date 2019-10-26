@@ -87,7 +87,7 @@ export default class Edit2 extends React.Component {
     }
 
     saveChanges(id, body) {
-        // console.log('TEST:', id, body, this.state.name)
+
         
         this.props.saveChangesFn(id, body)
         this.props.editCard2()

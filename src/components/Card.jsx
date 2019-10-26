@@ -10,7 +10,6 @@ export default class Card extends React.Component {
              editField: false,
         }
         this.editCard2 = this.editCard2.bind(this)
-        // this.saveChangesFn =this.saveChangesFn.bind(this)
     }
 
     toggleCard(){
@@ -41,7 +40,6 @@ export default class Card extends React.Component {
                
                 <div 
                     className="card"
-                    // onClick={()=>console.log('test', this.props.cardObj2.name)}
                     onClick={()=>this.toggleCard()}
                 >
                     
@@ -67,8 +65,7 @@ export default class Card extends React.Component {
                     
                 </div>
                
-               
-                    {/* <button onClick={()=>this.props.editCardFn(this.props.cardObj2.id)}>EDIT</button> */}
+            
                     
                        
 
@@ -80,5 +77,3 @@ export default class Card extends React.Component {
         )
     }
 }
-
-// onClick={()=>this.props.getCardFn(this.props.cardObj2.id)}

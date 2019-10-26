@@ -4,7 +4,7 @@ import axios from 'axios'
 import Collection from './Collection'
 import { Switch, Route } from 'react-router-dom'
 import New from './New'
-import Edit from './Edit'
+
 
 
 
@@ -21,13 +21,8 @@ export default class Display extends React.Component {
         this.toggleEditField2 = this.toggleEditField2.bind(this)
         this.deleteCard = this.deleteCard.bind(this)
         this.saveChanges2 = this.saveChanges2.bind(this)
-        // this.editCard = this.editCard.bind(this)
        
     }
-
-    // componentDidMount(){
-    //     console.log(this.state.editing)
-    // }
 
 componentDidMount(){
     this.getCards()
@@ -45,7 +40,6 @@ componentDidMount(){
     }
 
     saveChanges2(id, body) {
-        // console.log(id, body)
         axios
             .put(`/api/collection/${id}`, body)
             .then(res => {
@@ -70,14 +64,12 @@ componentDidMount(){
    
 
     toggleEditField() {
-        // console.log('fred')
         this.setState({
             editing: !this.state.editing
         })
     }
 
     toggleEditField2() {
-        // console.log('fred')
         this.setState({
             editing2: !this.state.editing2
         })
@@ -96,20 +88,9 @@ componentDidMount(){
                     />
                     : null}
 
-        {/* here is the bang you need to delete */}
-                {this.state.editing2 ?
-                    <Edit
-                        toggleEditFn2={this.toggleEditField2}
-                        cardObj={this.state.cards}
-                        getCardsFn={this.getCards}
-                        
-                    />
-                    : null}
-
                 <Collection
                     cardObj={this.state.cards}
                     getCardsFn={this.getCards}
-                    // getCardFn={this.getCard}
                     toggleEditFn={this.toggleEditField}
                     toggleEditFn2={this.toggleEditField2}
                     editing={this.state.editing}

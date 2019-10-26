@@ -10,13 +10,11 @@ export default class Collection extends React.Component {
         this.state ={
 
         }
-        // this.saveChangesFn = this.saveChangesFn.bind(this)
     }
     
 
 
     render() {
-        // console.log(this.props.cardObj)
         return (
             <div>
             
