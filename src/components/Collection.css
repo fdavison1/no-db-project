@@ -16,6 +16,14 @@
    
 }
 
+header {
+    background: #cc527a;
+}
+
+.background {
+    background: #a8a7a7;
+}
+
 .card-margin {
     margin: 10px;
 }
@@ -55,11 +63,13 @@ button {
 }
 
 .new {
-    background: yellow;
+    /* background: yellow; */
     height: 750px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url('./images/tim-gouw-VvQSzMJ_h0U-unsplash.jpg');
+    background-size: 100%;
 }
 
 .edit {

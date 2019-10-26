@@ -75,7 +75,7 @@ componentDidMount(){
 
     render() {
         return (
-            <div>
+            <div className='background'>
                
 {/* /////////////////////////////////////////////////// */}
                 {this.state.editing ?

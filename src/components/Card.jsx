@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Edit2 from './Edit2'
 
 export default class Card extends React.Component {
