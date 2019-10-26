@@ -108,55 +108,98 @@ export default class Edit2 extends React.Component {
 
     render() {
         return (
-            <div className='edit'>Edit2.jsx
-        <div className="inputs">
+            <div className="edit-container">
+                <div>
+            <h1 className='subtitle' >Edit Card</h1>
 
-                    <h2>Name:</h2><input
-                        onChange={(e) => this.handleChange1(e)}
-                        placeholder={this.props.cardObj.name}
-                        type="text" />
-                    <h2>Number:</h2><input
-                        onChange={(e) => this.handleChange2(e)}
-                        placeholder='Enter a Number!'
-                        type="number" /><button>GET RANDOM</button>
-                    <h2>Position:</h2><input
-                        onChange={(e) => this.handleChange3(e)}
-                        placeholder="Pick a Position!"
-                        type="text" /><button>GET RANDOM</button>
-                    <h2>Games Played:</h2><input
-                        onChange={(e) => this.handleChange4(e)}
-                        type="text" /><button>GET RANDOM</button>
-                    <h2>At Bats:</h2><input
-                        onChange={(e) => this.handleChange5(e)}
-                        type="text" /><button>GET RANDOM</button>
-                    <h2>Runs:</h2><input
-                        onChange={(e) => this.handleChange6(e)}
-                        type="text" /><button>GET RANDOM</button>
-                    <h2>Hits:</h2><input
-                        onChange={(e) => this.handleChange7(e)}
-                        type="text" /><button>GET RANDOM</button>
-                    <h2>Home Runs:</h2><input
-                        onChange={(e) => this.handleChange8(e)}
-                        type="text" /><button>GET RANDOM</button>
-                    <h2>RBIs:</h2><input
-                        onChange={(e) => this.handleChange9(e)}
-                        type="text" /><button>GET RANDOM</button>
-                    <h2>AVG: </h2><input
-                        onChange={(e) => this.handleChange10(e)}
-                        type="text" /><button>GET RANDOM</button>
-                    <br /><br /><input 
-                    onChange={(e)=>this.handleChange11(e)}
-                    type="text" 
-                    placeholder='Image URL' />
-                    <button
-                    onClick={()=>this.newPicture()}
-                    >UPLOAD IMAGE</button>
                 </div>
+        <div className='edit'>
 
-                <div className="new-preview">
+
+            <div className="edit-inputs">
+<div className='row'>
+
+                <h2>Name:</h2><input
+                    onChange={(e) => this.handleChange1(e)}
+                    placeholder='Enter Player Name!'
+                    type="text" />
+</div>
+<div className="row">
+
+                <h2>Number:</h2><input
+                    onChange={(e) => this.handleChange2(e)}
+                    placeholder='Enter a Number!'
+                    type="number" />
+</div>
+<div className="row">
+
+                <h2>Position:</h2><input
+                    onChange={(e) => this.handleChange3(e)}
+                    placeholder="Pick a Position!"
+                    type="text" />
+</div>
+<div className="row">
+
+                <h2>Games Played:</h2><input
+                    onChange={(e) => this.handleChange4(e)}
+                    placeholder="Enter a number!"
+                    type="text" />
+</div>
+<div className="row">
+
+                <h2>At Bats:</h2><input
+                    onChange={(e) => this.handleChange5(e)}
+                    placeholder="Enter a number!"
+                    type="text" />
+</div>
+<div className="row">
+
+                <h2>Runs:</h2><input
+                    onChange={(e) => this.handleChange6(e)}
+                    placeholder="Enter a number!"
+                    type="text" />
+</div>
+<div className="row">
+
+                <h2>Hits:</h2><input
+                    onChange={(e) => this.handleChange7(e)}
+                    placeholder="Enter a number!"
+                    type="text" />
+</div>
+<div className="row">
+
+                <h2>Home Runs:</h2><input
+                    onChange={(e) => this.handleChange8(e)}
+                    placeholder="Enter a number!"
+                    type="text" />
+</div>
+<div className="row">
+
+                <h2>RBIs:</h2><input
+                    onChange={(e) => this.handleChange9(e)}
+                    placeholder="Enter a number!"
+                    type="text" />
+</div>
+<div className="row">
+
+                <h2>AVG: </h2><input
+                    onChange={(e) => this.handleChange10(e)}
+                    placeholder="Enter a percentage!"
+                    type="text" />
+</div>
+
+                <br /><br /><input 
+                    onChange={(e)=>this.handleChange11(e)}
+                    type="text" placeholder='Image URL' />
+                <button
+                onClick={()=>this.newPicture()}>upload image</button>
+            </div>
+
+                <div className="edit-preview">
                     <button
+                        className='big'
                         onClick={() => this.props.editCard2()}
-                    >DISCARD CHANGES</button>
+                        >DISCARD CHANGES</button>
 
                     <div className="card">
                         <img src={this.state.image} alt={this.state.name} />
@@ -164,12 +207,14 @@ export default class Edit2 extends React.Component {
                     </div>
 
                     <button
+                        className='big'
                         onClick={() => this.saveChanges(this.props.cardObj.id, this.state)}>SAVE CHANGES</button>
 
 
                 </div>
+                <div className>
 
-                <div className="card">
+                <div className="card2">
                     <h2>{this.state.name} {this.state.num}|{this.state.position}</h2>
                     <div className="back">
                         <h2 className='gray'>Games Played: {this.state.GP}</h2>
@@ -181,7 +226,9 @@ export default class Edit2 extends React.Component {
                         <h2 className='gray'>AVG: {this.state.AVG}</h2>
                     </div>
                 </div>
+                </div>
 
+                        </div>
             </div>
         )
     }

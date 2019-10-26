@@ -137,11 +137,56 @@ button {
   background-size: 100%;
 }
 
+.edit-container {
+  position: absolute;
+  top: 156px;
+  width: 100vw;
+  text-align: center;
+  left: 0;
+  /* margin: 0 auto; */
+  /* left: 0; */
+  /* display: flex; */
+  /* justify-content: space-around; */
+}
 .edit {
   background: cyan;
-  height: 950px;
+  height: 750px;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  position: absolute;
+  /* top: 156px; */
+  /* opacity: .5; */
+  left: 0;
+  flex-direction: row;
+  /* margin: 0 15px; */
+  /* border: solid red; */
+}
+
+.edit-inputs {
+  border: solid black thick;
+  border-radius: 10px;
+  background: white;
+  display: flex;
+  height: 500px;
+  width: 350px;
+  flex-direction: column;
+  padding: 5px;
+  justify-content: space-around;
+  position: relative;
+  /* top: 156px; */
+}
+
+
+.edit-preview {
+  position: relative;
+  /* left: 50vw; */
+  /* border: red solid; */
   justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .new-preview {
@@ -183,4 +228,8 @@ input {
 
 .new-container {
   background: yellow;
+}
+
+.edit-container {
+  background: cyan;
 }
