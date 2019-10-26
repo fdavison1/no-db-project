@@ -20,6 +20,7 @@ export default class Display extends React.Component {
         this.toggleEditField = this.toggleEditField.bind(this)
         this.toggleEditField2 = this.toggleEditField2.bind(this)
         this.deleteCard = this.deleteCard.bind(this)
+        this.saveChanges2 = this.saveChanges2.bind(this)
         // this.editCard = this.editCard.bind(this)
        
     }
@@ -43,6 +44,18 @@ componentDidMount(){
             })
     }
 
+    saveChanges2(id, body) {
+        // console.log(id, body)
+        axios
+            .put(`/api/collection/${id}`, body)
+            .then(res => {
+                this.setState({
+                    cards: res.data
+                })
+            })
+
+    }
+    
     deleteCard(id){
         axios
         .delete(`/api/collection/${id}`)
@@ -53,12 +66,6 @@ componentDidMount(){
         })
     }
 
-    // editCard(id){
-    //     this.toggleEditField2()
-    //     // console.log(id)
-    //     let cardID = id
-    //     console.log(cardID)
-    // }
 
    
 
@@ -95,6 +102,7 @@ componentDidMount(){
                         toggleEditFn2={this.toggleEditField2}
                         cardObj={this.state.cards}
                         getCardsFn={this.getCards}
+                        
                     />
                     : null}
 
@@ -107,6 +115,7 @@ componentDidMount(){
                     editing={this.state.editing}
                     deleteCardFn = {this.deleteCard}
                     editCardFn = {this.editCard}
+                    saveChangesFn = {this.saveChanges2}
                 />
 
 

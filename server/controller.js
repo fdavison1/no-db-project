@@ -26,11 +26,9 @@ module.exports = {
             res.status(200).send(cardArr)
         },
         editCard: (req, res) => {
-            
+            const {id} = req.params
             const index = cardArr.findIndex(el => el.id === +id)
-           cardArr.splice(index, 1, req.body)
-            
-           
+            cardArr.splice(index, 1, req.body)
             res.status(200).send(cardArr)
         }
     }

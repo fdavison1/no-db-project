@@ -10,7 +10,7 @@ export default class Collection extends React.Component {
         this.state ={
 
         }
-
+        // this.saveChangesFn = this.saveChangesFn.bind(this)
     }
     
 
@@ -45,6 +45,7 @@ export default class Collection extends React.Component {
                             toggleEditFn2 = {this.props.toggleEditFn2}
                             deleteCardFn = {this.props.deleteCardFn}
                             editCardFn = {this.props.editCardFn}
+                            saveChangesFn = {this.props.saveChangesFn}
                         />
 
 

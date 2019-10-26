@@ -10,6 +10,7 @@ export default class Card extends React.Component {
              editField: false,
         }
         this.editCard2 = this.editCard2.bind(this)
+        // this.saveChangesFn =this.saveChangesFn.bind(this)
     }
 
     toggleCard(){
@@ -19,10 +20,6 @@ export default class Card extends React.Component {
         console.log(this.props.cardObj2)
     }
 
-    // editCard(id){
-    //     this.props.toggleEditFn2()
-    //     console.log(id)
-    // }
 
     editCard2(){
         this.setState({
@@ -38,6 +35,7 @@ export default class Card extends React.Component {
                <Edit2 
                 cardObj = {this.props.cardObj2}
                 editCard2 = {this.editCard2}
+                saveChangesFn = {this.props.saveChangesFn}
                /> 
                : null}
                
