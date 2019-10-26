@@ -67,11 +67,12 @@ span {
 
 .cards {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
+  justify-content: space-around;
 
 }
 
-.card {
+.card, .card2 {
   border: solid black thick;
   height: 500px;
   width: 350px;
@@ -81,7 +82,11 @@ span {
   align-items: center;
   background: white;
   border-radius: 10px;
- 
+  
+}
+
+.card {
+  cursor: pointer;
 }
 
 .card-margin {
@@ -91,7 +96,7 @@ span {
 img {
   height: 400px;
   margin-top: 15px;
-  border: solid black;
+  border: solid black thick;
   max-width: 300px;
   object-fit: cover;
   border-radius: 10px;
@@ -100,6 +105,7 @@ img {
 .back {
   border: solid black;
   width: 300px;
+  border-radius: 6px;
 }
 
 .gray {
@@ -119,6 +125,7 @@ button {
   margin: 5px;
   border-radius: 6px;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .new {
@@ -147,6 +154,7 @@ input {
   border: 2px solid black;
   border-radius: 6px; 
   width: 100%;
+  text-align: center;
 }
 
 .inputs h2 {
@@ -168,6 +176,9 @@ input {
   background: black;
   padding: 0 5px; 
   margin: 25px;
+  color: #cc527a;
+  border: solid black;
+  cursor: pointer;
 }
 
 .new-container {

@@ -197,9 +197,9 @@ export default class New extends React.Component {
                         onClick={() => this.props.toggleEditFn()}
                     >DISCARD</button>
 
-                    <div className="card">
+                    <div className="card2">
                         <img src={this.state.image} alt={this.state.name} />
-                        <h2>{this.state.name} {this.state.num}|{this.state.position}</h2>
+                        <h1>{this.state.name} <span>{this.state.num}|{this.state.position}</span></h1>
                     </div>
 
                     <button
@@ -208,8 +208,8 @@ export default class New extends React.Component {
 
                 </div>
 
-                <div className="card">
-                    <h2>{this.state.name} {this.state.num}|{this.state.position}</h2>
+                <div className="card2">
+                    <h1>{this.state.name} <span>{this.state.num}|{this.state.position}</span></h1>
                     <div className="back">
                         <h2 className='gray'>Games Played: {this.state.GP}</h2>
                         <h2>At Bats: {this.state.AB}</h2>
