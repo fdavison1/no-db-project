@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from './Card'
-import './Collection.css'
+
 
 
 export default class Collection extends React.Component {
@@ -17,14 +17,14 @@ export default class Collection extends React.Component {
         return (
             <div>
             
-
+                {/* SUBTITLE */}
+                <h1 className='subtitle'>You have <span>{this.props.cardObj.length}</span> cards.</h1>
                
                 {/* MAKE NEW BUTTON */}
                 {!this.props.editing ?
-                <button onClick={() => this.props.toggleEditFn()}>Make New</button>
+                <button  className='big' onClick={() => this.props.toggleEditFn()}>MAKE NEW</button>
                 : null}
 
-                <h1>You have {this.props.cardObj.length} cards.</h1>
             
                 {/* MAPPING */}
                 <div className="cards">

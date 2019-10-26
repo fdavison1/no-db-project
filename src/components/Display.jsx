@@ -77,7 +77,7 @@ componentDidMount(){
         return (
             <div className='background'>
                
-{/* /////////////////////////////////////////////////// */}
+
                 {this.state.editing ?
                     <New
                     toggleEditFn={this.toggleEditField}

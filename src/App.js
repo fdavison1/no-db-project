@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom'
+import './reset.css'
 import './App.css';
 import Header from './components/Header'
 import Display from './components/Display'
