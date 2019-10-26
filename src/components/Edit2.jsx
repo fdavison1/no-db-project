@@ -15,7 +15,8 @@ export default class Edit2 extends React.Component {
             HR: 0,
             RBI: 0,
             AVG: '.000',
-            image: `https://sabr.org/sites/default/files/Ruth-Babe-1934-Goudey.png`
+            image: `https://sabr.org/sites/default/files/Ruth-Babe-1934-Goudey.png`,
+            image2: ''
         }
     }
 
@@ -86,6 +87,18 @@ export default class Edit2 extends React.Component {
         })
     }
 
+    handleChange11(e){
+        this.setState({
+            image2: e.target.value
+        })
+    }
+
+    newPicture(){
+        this.setState({
+            image: this.state.image2
+        })
+    }
+
     saveChanges(id, body) {
 
         
@@ -131,7 +144,13 @@ export default class Edit2 extends React.Component {
                     <h2>AVG: </h2><input
                         onChange={(e) => this.handleChange10(e)}
                         type="text" /><button>GET RANDOM</button>
-                    <br /><br /><input type="text" placeholder='Image URL' /><button>UPLOAD IMAGE</button>
+                    <br /><br /><input 
+                    onChange={(e)=>this.handleChange11(e)}
+                    type="text" 
+                    placeholder='Image URL' />
+                    <button
+                    onClick={()=>this.newPicture()}
+                    >UPLOAD IMAGE</button>
                 </div>
 
                 <div className="new-preview">

@@ -16,7 +16,8 @@ export default class New extends React.Component {
             HR: 0,
             RBI: 0,
             AVG: '.000',
-            image: 'https://d13csqd2kn0ewr.cloudfront.net/uploads/image/file/64371/w640xh480_USPW_779964.jpg?ts=1407631359'
+            image: 'https://d13csqd2kn0ewr.cloudfront.net/uploads/image/file/64371/w640xh480_USPW_779964.jpg?ts=1407631359',
+            image2: ''
         }
     }
 
@@ -37,8 +38,8 @@ export default class New extends React.Component {
                     AVG: '.000',
                     image: 'https://d13csqd2kn0ewr.cloudfront.net/uploads/image/file/64371/w640xh480_USPW_779964.jpg?ts=1407631359'
                 }))
-                this.props.toggleEditFn()
                 this.props.getCardsFn()
+                this.props.toggleEditFn()
     }
 
     handleChange1(e) {
@@ -92,6 +93,18 @@ export default class New extends React.Component {
         })
     }
 
+    handleChange11(e){
+        this.setState({
+            image2: e.target.value
+        })
+    }
+
+    newPicture(){
+        this.setState({
+            image: this.state.image2
+        })
+    }
+
     render() {
         return (
             <div className='new'>
@@ -132,7 +145,11 @@ export default class New extends React.Component {
                     <h2>AVG: </h2><input
                         onChange={(e) => this.handleChange10(e)}
                         type="text" /><button>GET RANDOM</button>
-                    <br /><br /><input type="text" placeholder='Image URL' /><button>UPLOAD IMAGE</button>
+                    <br /><br /><input 
+                        onChange={(e)=>this.handleChange11(e)}
+                        type="text" placeholder='Image URL' />
+                    <button
+                    onClick={()=>this.newPicture()}>UPLOAD IMAGE</button>
                 </div>
 
                 <div className="new-preview">
