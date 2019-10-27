@@ -107,6 +107,7 @@ export default class New extends React.Component {
     render() {
         return (
             <div className="new-container">
+                <a id="new"></a>
                 <h1 className='subtitle' >Create a New Card</h1>
             <div className='new'>
 
@@ -191,23 +192,29 @@ export default class New extends React.Component {
                 </div>
 
                 <div className="new-preview">
-                    
+
+                {/* "DISCARD" BUTTON */}
                     <button
                         className='big'
                         onClick={() => this.props.toggleEditFn()}
-                    >DISCARD</button>
+                    >DISCARD
+                    </button>
 
+                {/* PREVIEW: FRONT OF CARD */}
                     <div className="card2">
                         <img src={this.state.image} alt={this.state.name} />
                         <h1>{this.state.name} <span>{this.state.num}|{this.state.position}</span></h1>
                     </div>
 
-                    <button
-                        className='big'
-                        onClick={() => this.newCard()}>UPLOAD CARD</button>
-
+                {/* "UPLOAD CARD" BUTTON */}
+                        <button
+                            className='big'
+                            onClick={() => this.newCard()}
+                        >UPLOAD CARD
+                        </button>
                 </div>
 
+                {/* PREVIEW: BACK OF CARD */}
                 <div className="card2">
                     <h1>{this.state.name} <span>{this.state.num}|{this.state.position}</span></h1>
                     <div className="back">
