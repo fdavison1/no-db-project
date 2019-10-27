@@ -42,6 +42,7 @@ export default class New extends React.Component {
         this.props.toggleEditFn()
     }
 
+    //HANDLE CHANGE methods (one for each input field)
     handleChange1(e) {
         this.setState({
             name: e.target.value
@@ -99,6 +100,7 @@ export default class New extends React.Component {
         })
     }
 
+    //NEW PICTURE method - uploads picture to preview
     newPicture() {
         this.setState({
             image: this.state.image2
