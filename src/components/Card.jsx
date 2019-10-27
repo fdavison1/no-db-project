@@ -64,13 +64,19 @@ export default class Card extends React.Component {
                     
                 </div>
                
-            
-                    
-                       
+                {/* EDIT BUTTON */}
+                <a href='#top'>
+                    <button 
+                        onClick={()=>this.editCard2(this.props.cardObj2.id)}
+                        >edit
+                    </button>
+                </a>
 
-                    <button onClick={()=>this.editCard2(this.props.cardObj2.id)}>edit</button>
-
-                    <button onClick={()=>this.props.deleteCardFn(`${this.props.cardObj2.id}`)}>delete</button>
+                {/* DELETE BUTTON */}
+                    <button 
+                        onClick={()=>this.props.deleteCardFn(`${this.props.cardObj2.id}`)}
+                        >delete
+                    </button>
 
             </div>
         )

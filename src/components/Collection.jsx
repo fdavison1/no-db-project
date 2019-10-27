@@ -22,7 +22,7 @@ export default class Collection extends React.Component {
                
                 {/* MAKE NEW BUTTON */}
                 {!this.props.editing ?
-                    <a href='#new'>
+                    <a href='#top'>
                         <button  
                             className='big' 
                             onClick={() => this.props.toggleEditFn()}

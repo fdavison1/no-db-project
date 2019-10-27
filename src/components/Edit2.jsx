@@ -195,27 +195,39 @@ export default class Edit2 extends React.Component {
                 onClick={()=>this.newPicture()}>upload image</button>
             </div>
 
-                <div className="edit-preview">
+            <div className="edit-preview">
+
+            {/* "DISCARD CHANGES" BUTTON */}
+            <a href='#top'>
                     <button
                         className='big'
                         onClick={() => this.props.editCard2()}
-                        >DISCARD CHANGES</button>
+                        >DISCARD CHANGES
+                    </button>
+            </a>
 
-                    <div className="card">
+            {/* PREVIEW: "FRONT OF CARD" */}
+                    <div className="card2">
                         <img src={this.state.image} alt={this.state.name} />
-                        <h2>{this.state.name} {this.state.num}|{this.state.position}</h2>
+                        <h1>{this.state.name} <span>{this.state.num}|{this.state.position}</span></h1>
                     </div>
 
-                    <button
-                        className='big'
-                        onClick={() => this.saveChanges(this.props.cardObj.id, this.state)}>SAVE CHANGES</button>
-
-
+                {/* "SAVE CHANGES" BUTTON */}
+                    <a href='#top'>
+                        <button
+                            className='big'
+                            onClick={() => this.saveChanges(this.props.cardObj.id, this.state)}
+                            >SAVE CHANGES
+                        </button>
+                    </a>
+                
                 </div>
-                <div className>
+                
+                <div>
 
+                {/* PREVIEW: BACK OF CARD */}
                 <div className="card2">
-                    <h2>{this.state.name} {this.state.num}|{this.state.position}</h2>
+                    <h1>{this.state.name} <span>{this.state.num}|{this.state.position}</span></h1>
                     <div className="back">
                         <h2 className='gray'>Games Played: {this.state.GP}</h2>
                         <h2>At Bats: {this.state.AB}</h2>

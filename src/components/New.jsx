@@ -194,11 +194,13 @@ export default class New extends React.Component {
                 <div className="new-preview">
 
                 {/* "DISCARD" BUTTON */}
+                <a href="#top">
                     <button
                         className='big'
                         onClick={() => this.props.toggleEditFn()}
-                    >DISCARD
+                        >DISCARD
                     </button>
+                 </a>
 
                 {/* PREVIEW: FRONT OF CARD */}
                     <div className="card2">
