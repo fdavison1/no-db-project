@@ -1,6 +1,5 @@
-/* GENERAL STYLING  */
+/* GENERAL STYLING */
 /* (There is also a CSS Reset File) */
-
 * {
   box-sizing: border-box;
 }
@@ -9,8 +8,7 @@
   text-align: center;
 }
 
-/* HEADER/FOOTER CSS */
-
+/* HEADER/FOOTER */
 header, footer{
   background: #cc527a;
   border-top: solid black;
@@ -37,8 +35,14 @@ footer {
   text-shadow: 2px 2px #363636;
 }
 
-/* HEADINGS */
 
+/* MAIN BODY */
+.background {
+  background: #838383;
+}
+
+
+/* HEADINGS */
 h1 {
   font-size: 1.6rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -54,13 +58,9 @@ h2 {
 span {
   font-weight: 600;
   color: #e8175d;
-  
 }
 
-.background {
-  background: #838383;
-}
-
+/* CARD FORMATTING */
 .inputs {
   border: solid black thick;
   border-radius: 10px;
@@ -71,7 +71,6 @@ span {
   flex-direction: column;
   padding: 5px;
   justify-content: space-around;
-  /* align-content: flex-start; */
 }
 
 .cards {
@@ -122,10 +121,7 @@ img {
 }
 
 
-h2 {
-  margin: 0;
-}
-
+/* BUTTONS */
 button {
   margin: 0;
   color: white;
@@ -137,6 +133,19 @@ button {
   cursor: pointer;
 }
 
+.big {
+  height: 4rem;
+  font-size: 2.5rem;
+  background: black;
+  padding: 0 5px; 
+  margin: 25px;
+  color: #cc527a;
+  border: solid black;
+  cursor: pointer;
+}
+
+
+/* NEW SECTION */
 .new {
   background: yellow;
   height: 750px;
@@ -146,13 +155,25 @@ button {
   background-size: 100%;
 }
 
+.new-preview {
+  padding: 100px;
+}
+
+.new-container {
+  background: yellow;
+  border-bottom: solid black;
+}
+
+/* EDIT SECTION */
 .edit-container {
+  background: cyan;
   position: absolute;
   top: 156px;
   width: 100vw;
   text-align: center;
   left: 0;
 }
+
 .edit {
   background: cyan;
   height: 750px;
@@ -177,24 +198,17 @@ button {
   padding: 5px;
   justify-content: space-around;
   position: relative;
-  /* top: 156px; */
 }
-
 
 .edit-preview {
   position: relative;
-  /* left: 50vw; */
-  /* border: red solid; */
   justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.new-preview {
-  padding: 100px;
-}
-
+/* NEW/EDIT: INPUT FIELDS */
 input {
   height: 1.8rem;
   font-size: 1.2rem;
@@ -211,28 +225,6 @@ input {
 
 .row {
   display: flex;
-  /* justify-content:space-between; */
-  /* padding: 5px; */
   align-items: center;
-  /* justify-content: flex-start; */
 }
 
-.big {
-  height: 4rem;
-  font-size: 2.5rem;
-  background: black;
-  padding: 0 5px; 
-  margin: 25px;
-  color: #cc527a;
-  border: solid black;
-  cursor: pointer;
-}
-
-.new-container {
-  background: yellow;
-  border-bottom: solid black;
-}
-
-.edit-container {
-  background: cyan;
-}

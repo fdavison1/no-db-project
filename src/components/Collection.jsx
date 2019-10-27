@@ -1,23 +1,16 @@
 import React from 'react'
 import Card from './Card'
 
-
-
 export default class Collection extends React.Component {
     constructor(props) {
         super(props)
-        this.state ={
-
-        }
     }
     
-
-
     render() {
         return (
             <div>
             
-                {/* SUBTITLE */}
+                {/* SUBTITLE: "YOU HAVE (BLANK) CARDS" */}
                 <h1 className='subtitle'>You have <span>{this.props.cardObj.length}</span> cards.</h1>
                
                 {/* MAKE NEW BUTTON */}
@@ -31,16 +24,12 @@ export default class Collection extends React.Component {
                     </a>
                 : null}
 
-            
-                {/* MAPPING */}
+                {/* MAIN DISPLAY: SHOWS ALL CARDS */}
+                {/* Maps out "Card" Component */}
                 <div className="cards">
-
-
+                    
                     {this.props.cardObj.map(el => (
-
-
-
-                        <Card 
+                       <Card 
                             cardObj2={el}
                             key={el.id}
                             cardInfo={this.props.card}
@@ -50,9 +39,6 @@ export default class Collection extends React.Component {
                             editCardFn = {this.props.editCardFn}
                             saveChangesFn = {this.props.saveChangesFn}
                         />
-
-
-
                     ))}
 
                 </div>

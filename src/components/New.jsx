@@ -20,13 +20,14 @@ export default class New extends React.Component {
         }
     }
 
+    // NEW CARD method - AXIOS POST
     newCard() {
         axios
             .post('/api/collection', this.state)
             .then(res =>
                 this.setState({
                     name: 'Orbit',
-                    num: +this.state.num +1,
+                    num: +this.state.num + 1,
                     position: 'Mascot',
                     GP: 0,
                     AB: 0,
@@ -37,8 +38,8 @@ export default class New extends React.Component {
                     AVG: '.000',
                     image: 'https://d13csqd2kn0ewr.cloudfront.net/uploads/image/file/64371/w640xh480_USPW_779964.jpg?ts=1407631359'
                 }))
-                this.props.getCardsFn()
-                this.props.toggleEditFn()
+        this.props.getCardsFn()
+        this.props.toggleEditFn()
     }
 
     handleChange1(e) {
@@ -92,13 +93,13 @@ export default class New extends React.Component {
         })
     }
 
-    handleChange11(e){
+    handleChange11(e) {
         this.setState({
             image2: e.target.value
         })
     }
 
-    newPicture(){
+    newPicture() {
         this.setState({
             image: this.state.image2
         })
@@ -109,128 +110,128 @@ export default class New extends React.Component {
             <div className="new-container">
                 <a id="new"></a>
                 <h1 className='subtitle' >Create a New Card</h1>
-            <div className='new'>
+                <div className='new'>
 
 
-                <div className="inputs">
-<div className='row'>
+                    <div className="inputs">
+                        <div className='row'>
 
-                    <h2>Name:</h2><input
-                        onChange={(e) => this.handleChange1(e)}
-                        placeholder='Enter Player Name!'
-                        type="text" />
-</div>
-<div className="row">
+                            <h2>Name:</h2><input
+                                onChange={(e) => this.handleChange1(e)}
+                                placeholder='Enter Player Name!'
+                                type="text" />
+                        </div>
+                        <div className="row">
 
-                    <h2>Number:</h2><input
-                        onChange={(e) => this.handleChange2(e)}
-                        placeholder='Enter a Number!'
-                        type="number" />
-</div>
-<div className="row">
+                            <h2>Number:</h2><input
+                                onChange={(e) => this.handleChange2(e)}
+                                placeholder='Enter a Number!'
+                                type="number" />
+                        </div>
+                        <div className="row">
 
-                    <h2>Position:</h2><input
-                        onChange={(e) => this.handleChange3(e)}
-                        placeholder="Pick a Position!"
-                        type="text" />
-</div>
-<div className="row">
+                            <h2>Position:</h2><input
+                                onChange={(e) => this.handleChange3(e)}
+                                placeholder="Pick a Position!"
+                                type="text" />
+                        </div>
+                        <div className="row">
 
-                    <h2>Games Played:</h2><input
-                        onChange={(e) => this.handleChange4(e)}
-                        placeholder="Enter a number!"
-                        type="text" />
-</div>
-<div className="row">
+                            <h2>Games Played:</h2><input
+                                onChange={(e) => this.handleChange4(e)}
+                                placeholder="Enter a number!"
+                                type="text" />
+                        </div>
+                        <div className="row">
 
-                    <h2>At Bats:</h2><input
-                        onChange={(e) => this.handleChange5(e)}
-                        placeholder="Enter a number!"
-                        type="text" />
-</div>
-<div className="row">
+                            <h2>At Bats:</h2><input
+                                onChange={(e) => this.handleChange5(e)}
+                                placeholder="Enter a number!"
+                                type="text" />
+                        </div>
+                        <div className="row">
 
-                    <h2>Runs:</h2><input
-                        onChange={(e) => this.handleChange6(e)}
-                        placeholder="Enter a number!"
-                        type="text" />
-</div>
-<div className="row">
+                            <h2>Runs:</h2><input
+                                onChange={(e) => this.handleChange6(e)}
+                                placeholder="Enter a number!"
+                                type="text" />
+                        </div>
+                        <div className="row">
 
-                    <h2>Hits:</h2><input
-                        onChange={(e) => this.handleChange7(e)}
-                        placeholder="Enter a number!"
-                        type="text" />
-</div>
-<div className="row">
+                            <h2>Hits:</h2><input
+                                onChange={(e) => this.handleChange7(e)}
+                                placeholder="Enter a number!"
+                                type="text" />
+                        </div>
+                        <div className="row">
 
-                    <h2>Home Runs:</h2><input
-                        onChange={(e) => this.handleChange8(e)}
-                        placeholder="Enter a number!"
-                        type="text" />
-</div>
-<div className="row">
+                            <h2>Home Runs:</h2><input
+                                onChange={(e) => this.handleChange8(e)}
+                                placeholder="Enter a number!"
+                                type="text" />
+                        </div>
+                        <div className="row">
 
-                    <h2>RBIs:</h2><input
-                        onChange={(e) => this.handleChange9(e)}
-                        placeholder="Enter a number!"
-                        type="text" />
-</div>
-<div className="row">
+                            <h2>RBIs:</h2><input
+                                onChange={(e) => this.handleChange9(e)}
+                                placeholder="Enter a number!"
+                                type="text" />
+                        </div>
+                        <div className="row">
 
-                    <h2>AVG: </h2><input
-                        onChange={(e) => this.handleChange10(e)}
-                        placeholder="Enter a percentage!"
-                        type="text" />
-</div>
+                            <h2>AVG: </h2><input
+                                onChange={(e) => this.handleChange10(e)}
+                                placeholder="Enter a percentage!"
+                                type="text" />
+                        </div>
 
-                    <br /><br /><input 
-                        onChange={(e)=>this.handleChange11(e)}
-                        type="text" placeholder='Image URL' />
-                    <button
-                    onClick={()=>this.newPicture()}>upload image</button>
-                </div>
-
-                <div className="new-preview">
-
-                {/* "DISCARD" BUTTON */}
-                <a href="#top">
-                    <button
-                        className='big'
-                        onClick={() => this.props.toggleEditFn()}
-                        >DISCARD
-                    </button>
-                 </a>
-
-                {/* PREVIEW: FRONT OF CARD */}
-                    <div className="card2">
-                        <img src={this.state.image} alt={this.state.name} />
-                        <h1>{this.state.name} <span>{this.state.num}|{this.state.position}</span></h1>
+                        <br /><br /><input
+                            onChange={(e) => this.handleChange11(e)}
+                            type="text" placeholder='Image URL' />
+                        <button
+                            onClick={() => this.newPicture()}>upload image</button>
                     </div>
 
-                {/* "UPLOAD CARD" BUTTON */}
+                    <div className="new-preview">
+
+                        {/* "DISCARD" BUTTON */}
+                        <a href="#top">
+                            <button
+                                className='big'
+                                onClick={() => this.props.toggleEditFn()}
+                            >DISCARD
+                    </button>
+                        </a>
+
+                        {/* PREVIEW: FRONT OF CARD */}
+                        <div className="card2">
+                            <img src={this.state.image} alt={this.state.name} />
+                            <h1>{this.state.name} <span>{this.state.num}|{this.state.position}</span></h1>
+                        </div>
+
+                        {/* "UPLOAD CARD" BUTTON */}
                         <button
                             className='big'
                             onClick={() => this.newCard()}
                         >UPLOAD CARD
                         </button>
-                </div>
-
-                {/* PREVIEW: BACK OF CARD */}
-                <div className="card2">
-                    <h1>{this.state.name} <span>{this.state.num}|{this.state.position}</span></h1>
-                    <div className="back">
-                        <h2 className='gray'>Games Played: {this.state.GP}</h2>
-                        <h2>At Bats: {this.state.AB}</h2>
-                        <h2 className='gray'>Runs: {this.state.R}</h2>
-                        <h2>Hits: {this.state.H}</h2>
-                        <h2 className='gray'>Home Runs: {this.state.HR}</h2>
-                        <h2>RBIs: {this.state.RBI}</h2>
-                        <h2 className='gray'>AVG: {this.state.AVG}</h2>
                     </div>
-                </div>
 
-            </div>
+                    {/* PREVIEW: BACK OF CARD */}
+                    <div className="card2">
+                        <h1>{this.state.name} <span>{this.state.num}|{this.state.position}</span></h1>
+                        <div className="back">
+                            <h2 className='gray'>Games Played: {this.state.GP}</h2>
+                            <h2>At Bats: {this.state.AB}</h2>
+                            <h2 className='gray'>Runs: {this.state.R}</h2>
+                            <h2>Hits: {this.state.H}</h2>
+                            <h2 className='gray'>Home Runs: {this.state.HR}</h2>
+                            <h2>RBIs: {this.state.RBI}</h2>
+                            <h2 className='gray'>AVG: {this.state.AVG}</h2>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
         )

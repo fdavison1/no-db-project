@@ -6,12 +6,12 @@ export default class Card extends React.Component {
         super(props)
         this.state = {
             flipCard: false,
-             editField: false,
+            editField: false,
         }
         this.editCard2 = this.editCard2.bind(this)
     }
 
-    toggleCard(){
+    toggleCard() {
         this.setState({
             flipCard: !this.state.flipCard,
         })
@@ -19,37 +19,42 @@ export default class Card extends React.Component {
     }
 
 
-    editCard2(){
+    editCard2() {
         this.setState({
             editField: !this.state.editField
         })
     }
-   
+
 
     render() {
         return (
             <div className='card-margin'>
-               {this.state.editField ? 
-               <Edit2 
-                cardObj = {this.props.cardObj2}
-                editCard2 = {this.editCard2}
-                saveChangesFn = {this.props.saveChangesFn}
-               /> 
-               : null}
-               
-                <div 
-                    className="card"
-                    onClick={()=>this.toggleCard()}
-                >
-                    
-                    {!this.state.flipCard ?
-                    <img src={this.props.cardObj2.image} alt={this.props.cardObj2.name} /> 
+
+                {/* EDIT FIELD: only shows when toggled */}
+                {this.state.editField ?
+                    <Edit2
+                        cardObj={this.props.cardObj2}
+                        editCard2={this.editCard2}
+                        saveChangesFn={this.props.saveChangesFn}
+                    />
                     : null}
 
-                    <h1>{this.props.cardObj2.name} <span>{this.props.cardObj2.num} | {this.props.cardObj2.position}</span></h1> 
-                    
-                    {this.state.flipCard? 
-                     
+                {/* Active toggle function on click */}
+                <div
+                    className="card"
+                    onClick={() => this.toggleCard()}
+                >
+
+                    {/* FRONT OF CARD: image toggles */}
+                    {!this.state.flipCard ?
+                        <img src={this.props.cardObj2.image} alt={this.props.cardObj2.name} />
+                        : null}
+
+                    {/* NAME OF CARD: always displayed */}
+                    <h1>{this.props.cardObj2.name} <span>{this.props.cardObj2.num} | {this.props.cardObj2.position}</span></h1>
+
+                    {/* BACK OF CARD: toggles */}
+                    {this.state.flipCard ?
                         <div className="back">
                             <h2 className='gray'>Games Played: <span>{this.props.cardObj2.GP}</span></h2>
                             <h2>At Bats: <span>{this.props.cardObj2.AB}</span></h2>
@@ -58,24 +63,23 @@ export default class Card extends React.Component {
                             <h2 className='gray'>Home Runs: <span>{this.props.cardObj2.HR}</span></h2>
                             <h2>RBIs: <span>{this.props.cardObj2.RBI}</span></h2>
                             <h2 className='gray'>AVG: <span>{this.props.cardObj2.AVG}</span></h2>
-                        </div> 
-                       
+                        </div>
                         : null}
-                    
+
                 </div>
-               
+
                 {/* EDIT BUTTON */}
                 <a href='#top'>
-                    <button 
-                        onClick={()=>this.editCard2(this.props.cardObj2.id)}
-                        >edit
+                    <button
+                        onClick={() => this.editCard2(this.props.cardObj2.id)}
+                    >edit
                     </button>
                 </a>
 
                 {/* DELETE BUTTON */}
-                    <button 
-                        onClick={()=>this.props.deleteCardFn(`${this.props.cardObj2.id}`)}
-                        >delete
+                <button
+                    onClick={() => this.props.deleteCardFn(`${this.props.cardObj2.id}`)}
+                >delete
                     </button>
 
             </div>

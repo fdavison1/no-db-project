@@ -5,31 +5,26 @@ module.exports = {
     getCards: (req, res) => {
         res.status(200).send(cardArr)
     },
-    // getCard: (req, res) => {
-    //     const {id} = req.params
-    //     const index = cardArr.findIndex(el => el.id === +id)
-    //     let card = cardArr[index]
-    //     // console.log(card)
-    //     res.status(200).send(card)
-    //     },
-        newCard: (req, res) => {
-            const newCard = {...req.body, id}
-            cardArr.push(newCard)
-            id++
-            res.status(200).send(cardArr)
-        },
-        deleteCard: (req, res) => {
-            const {id} = req.params
-            const index = cardArr.findIndex(el => el.id === +id)
-            cardArr.splice(index, 1)
-            res.status(200).send(cardArr)
-        },
-        editCard: (req, res) => {
-            const {id} = req.params
-            const index = cardArr.findIndex(el => el.id === +id)
-            cardArr.splice(index, 1, req.body)
-            res.status(200).send(cardArr)
-        }
+    newCard: (req, res) => {
+        const newCard = { ...req.body, id }
+        cardArr.push(newCard)
+        id++
+        res.status(200).send(cardArr)
+    },
+    deleteCard: (req, res) => {
+        //Destucturing 2
+        const { id } = req.params
+        const index = cardArr.findIndex(el => el.id === +id)
+        cardArr.splice(index, 1)
+        res.status(200).send(cardArr)
+    },
+    editCard: (req, res) => {
+        //Destructuring 3
+        const { id } = req.params
+        const index = cardArr.findIndex(el => el.id === +id)
+        cardArr.splice(index, 1, req.body)
+        res.status(200).send(cardArr)
     }
+}
 
-   
+
