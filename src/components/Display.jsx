@@ -12,9 +12,6 @@ export default class Display extends React.Component {
             editing2: false
         }
 
-        //Destructuring
-        
-
         //BINDS
         this.getCards = this.getCards.bind(this)
         this.toggleEditField = this.toggleEditField.bind(this)
@@ -78,6 +75,10 @@ componentDidMount(){
 
 
     render() {
+        //Destructuring
+        const {cards, editing} = this.state
+        const {getCards, toggleEditField, toggleEditField2, deleteCard, editCard, saveChanges2} = this
+        
         return (
             <div className='background'>
                
@@ -91,14 +92,14 @@ componentDidMount(){
 
             {/* COLLECTION DISPLAY */}
                 <Collection
-                    cardObj={this.state.cards}
-                    getCardsFn={this.getCards}
-                    toggleEditFn={this.toggleEditField}
-                    toggleEditFn2={this.toggleEditField2}
-                    editing={this.state.editing}
-                    deleteCardFn = {this.deleteCard}
-                    editCardFn = {this.editCard}
-                    saveChangesFn = {this.saveChanges2}
+                    cardObj={cards}
+                    getCardsFn={getCards}
+                    editing={editing}
+                    toggleEditFn={toggleEditField}
+                    toggleEditFn2={toggleEditField2}
+                    deleteCardFn = {deleteCard}
+                    editCardFn = {editCard}
+                    saveChangesFn = {saveChanges2}
                 />
 
             </div>

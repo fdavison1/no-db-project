@@ -12,14 +12,14 @@ module.exports = {
         res.status(200).send(cardArr)
     },
     deleteCard: (req, res) => {
-        //Destucturing 2
+        //Destucturing
         const { id } = req.params
         const index = cardArr.findIndex(el => el.id === +id)
         cardArr.splice(index, 1)
         res.status(200).send(cardArr)
     },
     editCard: (req, res) => {
-        //Destructuring 3
+        //Destructuring
         const { id } = req.params
         const index = cardArr.findIndex(el => el.id === +id)
         cardArr.splice(index, 1, req.body)

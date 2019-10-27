@@ -25,9 +25,9 @@ export default class Collection extends React.Component {
                 : null}
 
                 {/* MAIN DISPLAY: SHOWS ALL CARDS */}
-                {/* Maps out "Card" Component */}
                 <div className="cards">
                     
+                    {/* MAP */}
                     {this.props.cardObj.map(el => (
                        <Card 
                             cardObj2={el}
