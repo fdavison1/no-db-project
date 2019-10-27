@@ -188,7 +188,7 @@ export default class Edit2 extends React.Component {
                             onClick={() => this.newPicture()}>upload image</button>
                     </section>
 
-                    {/* SECTION 2: EDIT PREVIEW */}
+                    {/* SECTION 2: EDIT PREVIEW (Buttons, Front of card) */}
                     <section className="edit-preview">
 
                         {/* "DISCARD CHANGES" BUTTON */}
@@ -214,7 +214,6 @@ export default class Edit2 extends React.Component {
                             >SAVE CHANGES
                         </button>
                         </a>
-
                     </section>
 
                     <div>

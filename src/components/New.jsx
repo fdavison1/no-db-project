@@ -93,7 +93,6 @@ export default class New extends React.Component {
             AVG: e.target.value
         })
     }
-
     handleChange11(e) {
         this.setState({
             image2: e.target.value
@@ -111,90 +110,79 @@ export default class New extends React.Component {
         return (
             <div className="new-container">
                 <a id="new"></a>
+                {/* "CREATE A NEW CARD" SUBTITLE */}
                 <h1 className='subtitle' >Create a New Card</h1>
                 <div className='new'>
-
-
-                    <div className="inputs">
+                {/* SECTION 1: INPUTS */}
+                    <section className="inputs">
                         <div className='row'>
-
                             <h2>Name:</h2><input
                                 onChange={(e) => this.handleChange1(e)}
                                 placeholder='Enter Player Name!'
                                 type="text" />
                         </div>
                         <div className="row">
-
                             <h2>Number:</h2><input
                                 onChange={(e) => this.handleChange2(e)}
                                 placeholder='Enter a Number!'
                                 type="number" />
                         </div>
                         <div className="row">
-
                             <h2>Position:</h2><input
                                 onChange={(e) => this.handleChange3(e)}
                                 placeholder="Pick a Position!"
                                 type="text" />
                         </div>
                         <div className="row">
-
                             <h2>Games Played:</h2><input
                                 onChange={(e) => this.handleChange4(e)}
                                 placeholder="Enter a number!"
                                 type="text" />
                         </div>
                         <div className="row">
-
                             <h2>At Bats:</h2><input
                                 onChange={(e) => this.handleChange5(e)}
                                 placeholder="Enter a number!"
                                 type="text" />
                         </div>
                         <div className="row">
-
                             <h2>Runs:</h2><input
                                 onChange={(e) => this.handleChange6(e)}
                                 placeholder="Enter a number!"
                                 type="text" />
                         </div>
                         <div className="row">
-
                             <h2>Hits:</h2><input
                                 onChange={(e) => this.handleChange7(e)}
                                 placeholder="Enter a number!"
                                 type="text" />
                         </div>
                         <div className="row">
-
                             <h2>Home Runs:</h2><input
                                 onChange={(e) => this.handleChange8(e)}
                                 placeholder="Enter a number!"
                                 type="text" />
                         </div>
                         <div className="row">
-
                             <h2>RBIs:</h2><input
                                 onChange={(e) => this.handleChange9(e)}
                                 placeholder="Enter a number!"
                                 type="text" />
                         </div>
                         <div className="row">
-
                             <h2>AVG: </h2><input
                                 onChange={(e) => this.handleChange10(e)}
                                 placeholder="Enter a percentage!"
                                 type="text" />
                         </div>
-
                         <br /><br /><input
                             onChange={(e) => this.handleChange11(e)}
                             type="text" placeholder='Image URL' />
                         <button
                             onClick={() => this.newPicture()}>upload image</button>
-                    </div>
-
-                    <div className="new-preview">
+                    </section>
+                    {/* SECTION 2: PREVIEW (Buttons, Front of Card) */}
+                    <section className="new-preview">
 
                         {/* "DISCARD" BUTTON */}
                         <a href="#top">
@@ -217,10 +205,10 @@ export default class New extends React.Component {
                             onClick={() => this.newCard()}
                         >UPLOAD CARD
                         </button>
-                    </div>
+                    </section>
 
-                    {/* PREVIEW: BACK OF CARD */}
-                    <div className="card2">
+                    {/* SECTION 3 - PREVIEW: BACK OF CARD */}
+                    <section className="card2">
                         <h1>{this.state.name} <span>{this.state.num}|{this.state.position}</span></h1>
                         <div className="back">
                             <h2 className='gray'>Games Played: {this.state.GP}</h2>
@@ -231,7 +219,7 @@ export default class New extends React.Component {
                             <h2>RBIs: {this.state.RBI}</h2>
                             <h2 className='gray'>AVG: {this.state.AVG}</h2>
                         </div>
-                    </div>
+                    </section>
 
                 </div>
             </div>
