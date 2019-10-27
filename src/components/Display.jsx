@@ -34,7 +34,7 @@ componentDidMount(){
                 this.setState({
                     cards: res.data,
                 })
-            })
+            }).catch(()=> console.log('error with getCards'))
     }
 
 //SAVE CHANGES method - PUT AXIOS (URL parameter)
@@ -45,7 +45,7 @@ componentDidMount(){
                 this.setState({
                     cards: res.data
                 })
-            })
+            }).catch(()=> console.log('error with saveChanges2'))
     }
     
 //DELETE CARD method - DELETE AXIOS (URL query)
@@ -56,7 +56,7 @@ componentDidMount(){
             this.setState({
                 cards: res.data
             })
-        })
+        }).catch(()=> console.log('error with deleteCard'))
     }
  
 //TOGGLE NEW FIELD method
