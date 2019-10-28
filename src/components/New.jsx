@@ -210,20 +210,6 @@ export default class New extends React.Component {
                         </button>
                     </section>
 
-                    {/* SECTION 3 - PREVIEW: BACK OF CARD */}
-                    {/* <section className="card2">
-                        <h1>{this.state.name} <span>{this.state.num}|{this.state.position}</span></h1>
-                        <div className="back">
-                            <h2 className='gray'>Games Played: {this.state.GP}</h2>
-                            <h2>At Bats: {this.state.AB}</h2>
-                            <h2 className='gray'>Runs: {this.state.R}</h2>
-                            <h2>Hits: {this.state.H}</h2>
-                            <h2 className='gray'>Home Runs: {this.state.HR}</h2>
-                            <h2>RBIs: {this.state.RBI}</h2>
-                            <h2 className='gray'>AVG: {this.state.AVG}</h2>
-                        </div>
-                    </section> */}
-
                     <Back 
                     name={name}
                     num = {num}

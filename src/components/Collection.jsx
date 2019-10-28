@@ -38,6 +38,7 @@ export default class Collection extends React.Component {
                             deleteCardFn = {this.props.deleteCardFn}
                             editCardFn = {this.props.editCardFn}
                             saveChangesFn = {this.props.saveChangesFn}
+                            toggleEditField3 = {this.props.toggleEditField3} 
                         />
                     ))}
 

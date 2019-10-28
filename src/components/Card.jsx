@@ -23,6 +23,7 @@ export default class Card extends React.Component {
         this.setState({
             editField: !this.state.editField
         })
+        this.props.toggleEditField3()
     }
 
 

@@ -183,6 +183,7 @@ button:hover {
   width: 100vw;
   text-align: center;
   left: 0;
+  /* opacity: .5; */
 }
 
 .edit {
@@ -217,6 +218,10 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.cheater-div {
+  height: 650px;
 }
 
 /* NEW/EDIT: INPUT FIELDS */
