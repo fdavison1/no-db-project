@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import Back from './Back'
 
 export default class New extends React.Component {
     constructor() {
@@ -107,6 +108,8 @@ export default class New extends React.Component {
     }
 
     render() {
+        //Deconstructuring
+        const {name, num, position, AB, R, H, HR, RBI, AVG, GP} = this.state
         return (
             <div className="new-container">
                 <a id="new"></a>
@@ -208,7 +211,7 @@ export default class New extends React.Component {
                     </section>
 
                     {/* SECTION 3 - PREVIEW: BACK OF CARD */}
-                    <section className="card2">
+                    {/* <section className="card2">
                         <h1>{this.state.name} <span>{this.state.num}|{this.state.position}</span></h1>
                         <div className="back">
                             <h2 className='gray'>Games Played: {this.state.GP}</h2>
@@ -219,7 +222,20 @@ export default class New extends React.Component {
                             <h2>RBIs: {this.state.RBI}</h2>
                             <h2 className='gray'>AVG: {this.state.AVG}</h2>
                         </div>
-                    </section>
+                    </section> */}
+
+                    <Back 
+                    name={name}
+                    num = {num}
+                    position = {position}
+                    AB = {AB}
+                    R = {R}
+                    GP = {GP}
+                    H = {H}
+                    HR = {HR}
+                    RBI = {RBI}
+                    AVG = {AVG}
+                    />
 
                 </div>
             </div>
