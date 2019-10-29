@@ -13,7 +13,7 @@ module.exports = {
     },
     deleteCard: (req, res) => {
         //Destucturing
-        const { id } = req.params
+        const { id } = req.query
         const index = cardArr.findIndex(el => el.id === +id)
         cardArr.splice(index, 1)
         res.status(200).send(cardArr)

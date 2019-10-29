@@ -55,12 +55,12 @@ export default class Display extends React.Component {
     //DELETE CARD method - DELETE AXIOS (URL query)
     deleteCard(id) {
         axios
-            .delete(`/api/collection/${id}`)
+            .delete(`/api/collection/?=${id}`)
             .then(res => {
                 this.setState({
                     cards: res.data
                 })
-            }).catch(() => console.log('error with deleteCard'))
+            }).catch((err) => console.log(err))
     }
 
     //TOGGLE NEW FIELD method

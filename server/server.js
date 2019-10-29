@@ -10,7 +10,7 @@ app.use(express.json())
 //endpoints (4)
 app.get('/api/collection', ctrl.getCards)
 app.post('/api/collection', ctrl.newCard)
-app.delete('/api/collection/:id', ctrl.deleteCard)
+app.delete('/api/collection', ctrl.deleteCard)
 app.put('/api/collection/:id', ctrl.editCard)
 
 //listening
